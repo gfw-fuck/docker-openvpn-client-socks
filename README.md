@@ -30,6 +30,11 @@ docker run -it --rm --device=/dev/net/tun --cap-add=NET_ADMIN \
     kizzx2/openvpn-client-socks
 ```
 
+````
+docker run -d -it --rm --device=/dev/net/tun --cap-add=NET_ADMIN --name openvpn-client --volume /home/ubuntu/op/:/etc/openvpn/:ro -p 127.0.0.1:1080:1080 kizzx2/openvpn-client-socks
+
+````
+
 Then connect to SOCKS proxy through through `localhost:1080` / `local.docker:1080`. For example:
 
 ```bash
